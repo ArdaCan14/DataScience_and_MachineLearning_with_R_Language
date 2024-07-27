@@ -1,0 +1,24 @@
+---
+title: "R Notebook"
+output: html_notebook
+---
+
+
+```{r}
+
+square <- function(x) {
+  x^2
+}
+
+square(42)
+
+square_multiply <- function(x,y) {
+  x^2*y
+}
+
+
+square_multiply(13,5)
+
+```
+
+

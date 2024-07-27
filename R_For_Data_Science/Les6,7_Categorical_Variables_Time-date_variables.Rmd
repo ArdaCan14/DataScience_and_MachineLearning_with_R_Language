@@ -1,0 +1,62 @@
+---
+title: "R Notebook"
+output: html_notebook
+---
+
+
+```{r}
+
+ranks <- c("captain","general","admiral","major","sergent")
+is.vector(ranks)
+
+typeof(ranks)
+
+factor(ranks)
+ordered(ranks,level = c("sergent","captain","general","major","admşral"))
+
+```
+
+```{r}
+install.packages("lubridate")
+library(lubridate)
+
+df_first <- data.frame(age = c(10,20,30),height = c(120,140,160),birth = c("20100201","20110522","20090430"))
+
+df_second <- data.frame(age = c(10,20,30),height = c(120,140,160),birth = c("2010_02_01","2011_05_22","2009_04_30"))
+
+df_third <- data.frame(age = c(10,20,30),height = c(120,140,160),birth = c("01022010","22052011","30042009"))
+
+df_first
+
+str(df_first)
+
+
+ymd("20100201")
+dmy("01022010")
+mdy("09132001")
+
+
+df_third$birth <- dmy(df_third$birth)
+df_first$birth <- ymd(df_first$birth)
+df_second$birth <- ymd(df_second$birth)
+
+str(df_third)
+str(df_second)
+str(df_first)
+
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

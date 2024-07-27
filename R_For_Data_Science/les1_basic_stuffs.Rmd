@@ -1,0 +1,77 @@
+---
+title: "R Notebook"
+output: html_notebook
+---
+
+## Operators
+
+### Asignment Operators
+```{r}
+# <-
+# =
+# <<-
+
+a <- 1
+a
+a = 9
+a
+
+```
+### Aritmetic Operators
+
+```{r}
+9*9
+56-5
+34/3
+14+6
+a <- 13
+b <- 2
+a/b
+```
+### Logical Operators
+
+```{r}
+# x | y 
+# x & y
+
+data <- 1:10
+data
+
+data[data > 4]
+
+```
+### Matematical Operations
+
+```{r}
+# As a Calculator
+# +,-,/,*,^
+# log,log10,log2
+
+sqrt(16)
+abs(-19)
+
+a <- sqrt(9)
+b <- log(a)
+c <- log2(b)
+c
+
+log2(log(sqrt(9)))
+
+```
+### Fundamental Functions
+
+```{r}
+sessionInfo()
+dir()
+file.exists("data")
+file.exists("les1_basic_stuffs.Rmd")
+ls()
+```
+
+
+
+
+
+
+
+

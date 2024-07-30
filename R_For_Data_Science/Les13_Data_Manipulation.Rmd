@@ -1,0 +1,60 @@
+---
+title: "R Notebook"
+output: html_notebook
+---
+
+
+```{r}
+library(tidyverse)
+
+install.packages("nycflights13")
+library(nycflights13)
+
+df <- flights
+
+df
+install.packages("magrittr") # package installations are only needed the first time you use it
+install.packages("dplyr")    # alternative installation of the %>%
+library(magrittr) # needs to be run every time you start R and want to use %>%
+library(dplyr)    # alternatively, this also loads %>%
+```
+```{r}
+
+
+df %>%
+  select(dep_delay,day,carrier,distance) %>%
+  filter(dep_delay > 10) %>%
+  group_by(carrier) %>%
+  summarise(n = n(),ortalama = mean(dep_delay),mean(distance)) %>%
+  arrange(desc(ortalama))
+
+
+
+
+```
+```{r}
+# Select : Choosing variable
+
+str(df)
+
+a <- select(df,dep_delay,month,day,dep_time)
+
+select(df,1:4)
+
+
+select(df,-c(dep_delay,month,day,dep_time))
+
+
+```
+```{r}
+#Contains
+
+select(df,contains("time"))
+
+
+
+
+
+
+```
+

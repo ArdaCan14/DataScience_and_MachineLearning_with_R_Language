@@ -1,0 +1,32 @@
+---
+title: "R Notebook"
+output: html_notebook
+---
+
+
+```{r}
+
+for(i in 1:5) {
+  print(i*6)
+  print(i**2)
+}
+
+
+a <- c(1:10)
+
+for(i in a) {
+  print(i)
+}
+
+
+b <- c(1:8)
+b <- factor(b)
+
+for(i in levels(b)) {
+  print(b)
+}
+
+
+
+```
+

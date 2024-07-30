@@ -1,0 +1,52 @@
+---
+title: "R notebook"
+output: html_notebook
+---
+
+
+```{r}
+
+df <- mpg[,c("displ","cyl","cty")]
+
+apply(df,1,sum) # 1 Represents rows
+
+apply(df,2,mean) # 2 Represents columns
+ 
+
+mean(df$displ)
+
+apply(df,2,function(x) x^2)
+
+
+```
+```{r}
+
+l <- list(a = rnorm(90,1,2),
+          b = rbeta(10,1,2),
+          c = 1:5000)
+
+
+l
+
+sapply(l,mean)
+
+
+
+
+```
+```{r}
+
+install.packages("tidyverse")
+library(tidyverse)
+
+mtcars %>%
+split(.$cyl) %>% # from base R
+map(~ lm(mpg ~ wt,data = .)) %>%
+map(summary) %>%
+map_dbl("r.squared")
+
+
+
+
+```
+

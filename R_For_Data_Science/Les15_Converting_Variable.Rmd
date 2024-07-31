@@ -1,0 +1,29 @@
+---
+title: "R Notebook"
+output: html_notebook
+editor_options:
+  chunk_output_type: inline
+---
+
+```{r}
+library(nycflights13)
+library(magrittr) # needs to be run every time you start R and want to use %>%
+library(dplyr)   
+df <- flights
+
+str(df)
+```
+#Degisken Olusturma Islemleri
+
+```{r}
+mutate(df,balance = arr_delay - dep_delay,
+       speed = distance/arr_time*60)
+str(df)
+
+
+transmute(df,balance = arr_delay - dep_delay,
+       speed = distance/arr_time*60)
+
+
+```
+

@@ -1,0 +1,19 @@
+---
+title: "R Notebook"
+output: html_notebook
+---
+
+```{r}
+df %>%
+  select(contains("time")) %>%
+  filter(dep_time > 550)
+```
+```{r}
+df %>%
+  group_by(carrier) %>%
+  summarise(n = n(),
+            avarage_delay = mean(dep_delay,na.rm = TRUE,
+                                 standard_deviation = sd(dep_delay)))
+
+```
+
